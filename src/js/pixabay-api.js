@@ -1,21 +1,21 @@
-import axios from 'axios';
-const BASE_URL = 'https://pixabay.com/api/';
-const MY_KEY = '54859534-8152a3885f48c1e8938887334';
+import axios from "axios";
 
-export function getImagesByQuery(query) {
-  return axios
-    .get(BASE_URL, {
-      params: {
-        key: MY_KEY,
+
+export async function fetchArticle(query, page) {
+    const API_KEY = '28988b93b6304d3885e33119dfdb45e9';
+    const BASE_URL = 'https://newsapi.org/v2';
+    const END_POINT = '/everything';
+    const url = `${BASE_URL}${END_POINT}`;
+
+    const params = {
+        apiKey: API_KEY,
         q: query,
-        image_type: 'photo',
-        orientation: 'horizontal',
-        safesearch: true,
-      },
-    })
-    .then(response => response.data)
-    .catch(error => {
-      console.error('Error:', error);
-      return { hits: [] };
-    });
+        pageSize: 10,
+        page: page,
+        
+
+    };
+    const res = await axios.get( url, {params});
+    return res.data;
+    
 }
