@@ -108,3 +108,13 @@ color: rgb(172, 4, 4);
 .date{
 
 }
+.loader-btn{
+  margin: 0 auto;
+}
+.hidden{ 
+  display: none;
+}
+.loader-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

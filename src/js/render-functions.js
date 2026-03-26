@@ -18,3 +18,4 @@ function ArticleTemplate(article) {
 export function ArticlesTemplate(articles) {
     return articles.map(ArticleTemplate).join('');
 }
+

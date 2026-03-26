@@ -10,7 +10,7 @@ export async function fetchArticle(query, page) {
     const params = {
         apiKey: API_KEY,
         q: query,
-        pageSize: 10,
+        pageSize: 8,
         page: page,
         
 
